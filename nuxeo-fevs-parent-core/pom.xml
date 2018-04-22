@@ -20,5 +20,17 @@
       <artifactId>nuxeo-automation-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- data jar -->
+    <dependency>
+      <groupId>com.intuit.quickbooks-online</groupId>
+      <artifactId>ipp-v3-java-data</artifactId>
+      <version>2.9.0</version>
+    </dependency>
+    <!-- devkit jar without dependencies-->
+    <dependency>
+      <groupId>com.intuit.quickbooks-online</groupId>
+      <artifactId>ipp-v3-java-devkit</artifactId>
+      <version>2.9.0</version>
+    </dependency>
   </dependencies>
 </project>
