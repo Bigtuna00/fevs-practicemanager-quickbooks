@@ -1,0 +1,9 @@
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Manifest-Version: 1.0
+Bundle-Vendor: com.fevs
+Bundle-Version: 1.0.0
+Bundle-Name: fevs-core
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: com.fevs.fevs-core;singleton=true
+Nuxeo-Component: OSGI-INF/sandboxtester-operation-contrib.xml
