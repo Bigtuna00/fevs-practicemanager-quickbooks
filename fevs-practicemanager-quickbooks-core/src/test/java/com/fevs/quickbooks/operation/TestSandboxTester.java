@@ -1,4 +1,4 @@
-package com.fevs;
+package com.fevs.quickbooks.operation;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.inject.Inject;
 
-import com.fevs.quickbooks.operation.SandboxTester;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nuxeo.ecm.automation.AutomationService;
@@ -26,7 +25,7 @@ import org.nuxeo.runtime.test.runner.FeaturesRunner;
 @RunWith(FeaturesRunner.class)
 @Features(AutomationFeature.class)
 @RepositoryConfig(init = DefaultRepositoryInit.class, cleanup = Granularity.METHOD)
-@Deploy("com.fevs.fevs-core")
+@Deploy("fevs-practicemanager-quickbooks-core")
 public class TestSandboxTester {
 
     @Inject

@@ -7,15 +7,15 @@
     <version>9.10</version>
   </parent>
 
-  <groupId>com.fevs</groupId>
-  <artifactId>fevs-parent</artifactId>
+  <groupId>com.fevs.practicemanager.quickbooks</groupId>
+  <artifactId>fevs-practicemanager-quickbooks-parent</artifactId>
   <version>9.10-SNAPSHOT</version>
-  <name>Fevs parent</name>
-  <description>Parent project for FEVS plugins</description>
+  <name>FEVS Quickbooks parent</name>
+  <description>Parent project for Quickbooks connector</description>
   <packaging>pom</packaging>
 
   <modules>
-    <module>nuxeo-fevs-parent-core</module>
+    <module>fevs-practicemanager-quickbooks-core</module>
   </modules>
   <scm/>
   <licenses/>
@@ -76,7 +76,7 @@
   <dependencyManagement>
     <dependencies>
       <dependency>
-        <groupId>com.fevs</groupId>
+        <groupId>com.fevs.practicemanager.quickbooks</groupId>
         <artifactId>fevs-core</artifactId>
         <version>${project.version}</version>
       </dependency>
