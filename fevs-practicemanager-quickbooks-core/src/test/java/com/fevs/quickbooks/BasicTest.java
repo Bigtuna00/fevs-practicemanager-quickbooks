@@ -12,7 +12,8 @@ import static org.junit.Assert.*;
 public class BasicTest {
 
     OAuth2Config oauth2Config;
-    // These credentials are already public on github at https://github.com/intuit/QuickBooks-V3-Java-SDK/blob/develop/oauth2-platform-api/src/test/java/com/intuit/oauth2/http/RequestTest.java
+    // These credentials are already public on github at
+    // https://github.com/intuit/QuickBooks-V3-Java-SDK/blob/develop/oauth2-platform-api/src/test/java/com/intuit/oauth2/http/RequestTest.java
     private static final String clientId = "Q05MIy6oCjARUBablYbLLth6D7xh3dpMwWxOLnHYKM4WIqWBDP";
     private static final String clientSecret = "8dFUOx16fwJ4ZLNN7onJQ0vFG8ybkHf05uaz6T4b";
 
