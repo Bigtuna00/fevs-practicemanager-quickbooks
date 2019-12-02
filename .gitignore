@@ -29,5 +29,3 @@ bin/
 *-bak
 *.bak
 secrets.md
-credentials.properties
-fevs-practicemanager-quickbooks-core/src/test/resources/credentials.properties
