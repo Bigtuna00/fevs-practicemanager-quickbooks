@@ -6,10 +6,16 @@ import com.intuit.oauth2.http.MethodType;
 import com.intuit.oauth2.http.Request;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.nuxeo.ecm.platform.test.PlatformFeature;
 import org.nuxeo.runtime.api.Framework;
+import org.nuxeo.runtime.test.runner.Features;
+import org.nuxeo.runtime.test.runner.FeaturesRunner;
 
 import static org.junit.Assert.*;
 
+@RunWith(FeaturesRunner.class)
+@Features({PlatformFeature.class})
 public class BasicTest {
 
   OAuth2Config oauth2Config;
