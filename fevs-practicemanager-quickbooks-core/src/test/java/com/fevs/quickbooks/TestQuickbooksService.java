@@ -1,18 +1,19 @@
 package com.fevs.quickbooks;
 
-import static org.junit.Assert.assertNotNull;
-
 import com.intuit.oauth2.config.OAuth2Config;
 import org.json.JSONArray;
-import org.junit.Assume;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nuxeo.ecm.platform.test.PlatformFeature;
+import org.nuxeo.runtime.api.Framework;
 import org.nuxeo.runtime.test.runner.Deploy;
 import org.nuxeo.runtime.test.runner.Features;
 import org.nuxeo.runtime.test.runner.FeaturesRunner;
 
 import javax.inject.Inject;
+
+import static org.junit.Assert.assertNotNull;
 
 @RunWith(FeaturesRunner.class)
 @Features({ PlatformFeature.class })
@@ -21,6 +22,16 @@ public class TestQuickbooksService {
 
     @Inject
     protected QuickbooksService quickbooksservice;
+
+    @Before
+    public void setUp() {
+        // This is probably the wrong way to do this, but I want to make sure I have values...
+        String clientId = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_ID);
+        String clientSecret = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_SECRET);
+
+        assertNotNull(clientId);
+        assertNotNull(clientSecret);
+    }
 
     @Test
     public void testService() {
