@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<component name="com.fevs.quickbooks.QuickbooksService" version="1.0">
+
+  <implementation class="com.fevs.quickbooks.QuickbooksServiceImpl" />
+
+  <service>
+    <provide interface="com.fevs.quickbooks.QuickbooksService" />
+  </service>
+</component>

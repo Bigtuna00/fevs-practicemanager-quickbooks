@@ -6,4 +6,5 @@ Bundle-Version: 1.0.0
 Bundle-Name: fevs-core
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: com.fevs.practicemanager.quickbooks.fevs-practicemanager-quickbooks-core;singleton=true
-Nuxeo-Component: OSGI-INF/sandboxtester-operation-contrib.xml
+Nuxeo-Component: OSGI-INF/sandboxtester-operation-contrib.xml,
+ OSGI-INF/quickbooksservice-service.xml
