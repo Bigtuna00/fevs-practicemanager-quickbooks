@@ -1,10 +1,21 @@
 package com.fevs.quickbooks;
 
+import com.intuit.oauth2.config.Environment;
+import com.intuit.oauth2.config.OAuth2Config;
+import org.json.JSONArray;
+import org.nuxeo.runtime.api.Framework;
 import org.nuxeo.runtime.model.ComponentContext;
 import org.nuxeo.runtime.model.ComponentInstance;
 import org.nuxeo.runtime.model.DefaultComponent;
 
 public class QuickbooksServiceImpl extends DefaultComponent implements QuickbooksService {
+
+    protected static OAuth2Config oauth2Config;
+
+    private String clientId;
+    private String clientSecret;
+
+    public static final String LOCK = "QuickbooksServiceLock";
 
     /**
      * Component activated notification.
@@ -30,20 +41,6 @@ public class QuickbooksServiceImpl extends DefaultComponent implements Quickbook
         super.deactivate(context);
     }
 
-    /**
-     * Application started notification.
-     * Called after the application started.
-     * You can do here any initialization that requires a working application
-     * (all resolved bundles and components are active at that moment)
-     *
-     * @param context the component context. Use it to get the current bundle context
-     * @throws Exception
-     */
-    @Override
-    public void applicationStarted(ComponentContext context) {
-        // do nothing by default. You can remove this method if not used.
-    }
-
     @Override
     public void registerContribution(Object contribution, String extensionPoint, ComponentInstance contributor) {
         // Add some logic here to handle contributions
@@ -52,5 +49,31 @@ public class QuickbooksServiceImpl extends DefaultComponent implements Quickbook
     @Override
     public void unregisterContribution(Object contribution, String extensionPoint, ComponentInstance contributor) {
         // Logic to do when unregistering any contribution
+    }
+
+    @Override
+    public OAuth2Config getOAuth2Config() {
+        synchronized (LOCK) {
+            generateOauth2Config();
+        }
+
+        return oauth2Config;
+    }
+
+    @Override
+    public JSONArray getCustomerList(String someParam) {
+        return null;
+    }
+
+    /*
+     * Must be called form synchronized code.
+     */
+    protected void generateOauth2Config() {
+        clientId = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_ID);
+        clientSecret = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_SECRET);
+
+        oauth2Config = new OAuth2Config.OAuth2ConfigBuilder(clientId, clientSecret) //set client id, secret
+                .callDiscoveryAPI(Environment.SANDBOX) // call discovery API to populate urls
+                .buildConfig();
     }
 }
