@@ -29,6 +29,9 @@ public class BasicTest {
     clientId = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_ID);
     clientSecret = Framework.getProperty(QuickBooksConstants.PROPERTY_CLIENT_SECRET);
 
+    assertNotNull(clientId);
+    assertNotNull(clientSecret);
+
     oauth2Config = new OAuth2Config.OAuth2ConfigBuilder(clientId, clientSecret) //set client id, secret
             .callDiscoveryAPI(Environment.SANDBOX) // call discovery API to populate urls
             .buildConfig();
